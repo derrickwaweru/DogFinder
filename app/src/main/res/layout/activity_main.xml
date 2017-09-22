@@ -10,20 +10,20 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/imageView"
-        android:src="@drawable/uncle"
+        android:src="@drawable/rott"
         android:scaleType="centerCrop" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mbwa Kenya"
-        android:layout_marginTop="35dp"
-        android:id="@+id/textView"
-        android:textColor="@color/colorTextIcons"
-        android:textSize="40sp"
+        android:text="Dog Zone"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold" />
+        android:layout_marginTop="35dp"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:id="@+id/appNameTextView"/>
 
     <EditText
         android:layout_width="wrap_content"
