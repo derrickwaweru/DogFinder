@@ -5,10 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.root.mbwakenya.adapters.DogListAdapter;
 import com.example.root.mbwakenya.models.Dog;
@@ -25,8 +21,8 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 
-public class DogsActivity extends AppCompatActivity {
-    public static final String TAG = DogsActivity.class.getSimpleName();
+public class DogListActivity extends AppCompatActivity {
+    public static final String TAG = DogListActivity.class.getSimpleName();
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private DogListAdapter mAdapter;
 
@@ -49,7 +45,7 @@ public class DogsActivity extends AppCompatActivity {
 //            @Override
 //            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 //                String dog = ((TextView)view).getText().toString();
-//                Toast.makeText(DogsActivity.this, dog, Toast.LENGTH_LONG).show();
+//                Toast.makeText(DogListActivity.this, dog, Toast.LENGTH_LONG).show();
 //            }
 //        });
 
@@ -70,14 +66,14 @@ public class DogsActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) {
                 mDogs = yelpService.processResults(response);
 
-                DogsActivity.this.runOnUiThread(new Runnable() {
+                DogListActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
 
                         mAdapter = new DogListAdapter(getApplicationContext(), mDogs);
                         mRecyclerView.setAdapter(mAdapter);
                         RecyclerView.LayoutManager layoutManager =
-                                new LinearLayoutManager(DogsActivity.this);
+                                new LinearLayoutManager(DogListActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
                     }

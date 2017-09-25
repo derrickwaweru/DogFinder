@@ -1,6 +1,7 @@
 package com.example.root.mbwakenya.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,10 @@ import android.widget.TextView;
 
 import com.example.root.mbwakenya.R;
 import com.example.root.mbwakenya.models.Dog;
+import com.example.root.mbwakenya.ui.DogDetailActivity;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -44,7 +48,7 @@ public class DogListAdapter extends RecyclerView.Adapter<DogListAdapter.DogViewH
         return mDogs.size();
     }
 
-    public class DogViewHolder extends RecyclerView.ViewHolder {
+    public class DogViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
         @Bind(R.id.dogImageView) ImageView mDogImageView;
         @Bind(R.id.dogNameTextView) TextView mNameTextView;
         @Bind(R.id.categoryTextView) TextView mCategoryTextView;
@@ -55,6 +59,15 @@ public class DogListAdapter extends RecyclerView.Adapter<DogListAdapter.DogViewH
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            itemView.setOnClickListener(this);
+        }
+        @Override
+        public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, DogDetailActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("dogs", Parcels.wrap(mDogs));
+            mContext.startActivity(intent);
         }
 
         public void bindDog(Dog dog) {

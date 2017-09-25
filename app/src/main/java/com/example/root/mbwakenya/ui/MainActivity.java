@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick (View v){
                 if(v == mFindDogsButton) {
                 String location = mLocationEditText.getText().toString();
-                Intent intent = new Intent(MainActivity.this, DogsActivity.class);
+                Intent intent = new Intent(MainActivity.this, DogListActivity.class);
                 intent.putExtra("location", location);
                 startActivity(intent);
             }
