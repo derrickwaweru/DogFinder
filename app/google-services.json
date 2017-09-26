@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "443489769991",
+    "firebase_url": "https://mbwakenya.firebaseio.com",
+    "project_id": "mbwakenya",
+    "storage_bucket": "mbwakenya.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443489769991:android:80d7a9512c9d2b74",
+        "android_client_info": {
+          "package_name": "com.example.root.mbwakenya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443489769991-h0df8of280kq3d64u49r06t78nn9o0cj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.root.mbwakenya",
+            "certificate_hash": "3d4935fab40ffa5ec4a916d6257a8df1a6aa30b7"
+          }
+        },
+        {
+          "client_id": "443489769991-l2eceen8vinsf7ae33su4i9ib727hbpg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlD6FPSwTWj2AKe6vk76wJ-qz2bY2o8Q0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443489769991-l2eceen8vinsf7ae33su4i9ib727hbpg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

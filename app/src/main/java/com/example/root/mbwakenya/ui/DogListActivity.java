@@ -1,11 +1,19 @@
 package com.example.root.mbwakenya.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
+import com.example.root.mbwakenya.Constants;
 import com.example.root.mbwakenya.adapters.DogListAdapter;
 import com.example.root.mbwakenya.models.Dog;
 import com.example.root.mbwakenya.R;
@@ -22,13 +30,13 @@ import okhttp3.Response;
 
 
 public class DogListActivity extends AppCompatActivity {
-    public static final String TAG = DogListActivity.class.getSimpleName();
+//    private SharedPreferences mSharedPreferences;
+//    private String mRecentAddress;
+
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+
     private DogListAdapter mAdapter;
-
-
     public ArrayList<Dog> mDogs = new ArrayList<>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,27 +44,24 @@ public class DogListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dogs);
         ButterKnife.bind(this);
 
-
-//        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, dogs);
-//        mListView.setAdapter(adapter);
-//
-//
-//        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                String dog = ((TextView)view).getText().toString();
-//                Toast.makeText(DogListActivity.this, dog, Toast.LENGTH_LONG).show();
-//            }
-//        });
-
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
+
         getDogs(location);
+
+//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+//
+//        if (mRecentAddress != null) {
+//            getRestaurants(mRecentAddress);
+//        }
     }
 
-    private void getDogs(String location){
+    private void getDogs(String location) {
         final YelpService yelpService = new YelpService();
-        yelpService.findDogs(location, new Callback(){
+
+        yelpService.findDogs(location, new Callback() {
+
             @Override
             public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
@@ -67,9 +72,9 @@ public class DogListActivity extends AppCompatActivity {
                 mDogs = yelpService.processResults(response);
 
                 DogListActivity.this.runOnUiThread(new Runnable() {
+
                     @Override
                     public void run() {
-
                         mAdapter = new DogListAdapter(getApplicationContext(), mDogs);
                         mRecyclerView.setAdapter(mAdapter);
                         RecyclerView.LayoutManager layoutManager =

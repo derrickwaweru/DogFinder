@@ -23,9 +23,10 @@
         <activity android:name=".ui.DogListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.root.mbwakenya.ui.MainActivity"></meta-data>
+                android:value="com.example.root.mbwakenya.ui.MainActivity" />
         </activity>
-        <activity android:name=".ui.DogDetailActivity"></activity>
+        <activity android:name=".ui.DogDetailActivity" />
+        <activity android:name=".ui.SavedDogListActivity"></activity>
     </application>
 
 </manifest>
