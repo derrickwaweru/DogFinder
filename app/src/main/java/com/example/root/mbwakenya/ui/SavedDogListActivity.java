@@ -4,25 +4,29 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 
 import com.example.root.mbwakenya.Constants;
 import com.example.root.mbwakenya.R;
+import com.example.root.mbwakenya.adapters.FirebaseDogListAdapter;
 import com.example.root.mbwakenya.adapters.FirebaseDogViewHolder;
 import com.example.root.mbwakenya.models.Dog;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.example.root.mbwakenya.util.OnStartDragListener;
+import com.example.root.mbwakenya.util.SimpleItemTouchHelperCallback;
+//import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class SavedDogListActivity extends AppCompatActivity {
-
+public class SavedDogListActivity extends AppCompatActivity implements OnStartDragListener {
     private DatabaseReference mDogReference;
-    private FirebaseRecyclerAdapter mFirebaseAdapter;
+    private FirebaseDogListAdapter mFirebaseAdapter;
+    private ItemTouchHelper mItemTouchHelper;
 
-    @Bind(R.id.recyclerView)
-    RecyclerView mRecyclerView;
+    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,29 +35,39 @@ public class SavedDogListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dogs);
         ButterKnife.bind(this);
 
-        mDogReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DOGS);
         setUpFirebaseAdapter();
     }
 
     private void setUpFirebaseAdapter() {
-        mFirebaseAdapter = new FirebaseRecyclerAdapter<Dog, FirebaseDogViewHolder>
-                (Dog.class, R.layout.dog_list_item, FirebaseDogViewHolder.class,
-                        mDogReference) {
+//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//        String uid = user.getUid();
 
-            @Override
-            protected void populateViewHolder(FirebaseDogViewHolder viewHolder,
-                                              Dog model, int position) {
-                viewHolder.bindDog(model);
-            }
-        };
+        mDogReference = FirebaseDatabase
+                .getInstance()
+                .getReference(Constants.FIREBASE_CHILD_DOGS);
+//                .child(uid);
+
+        mFirebaseAdapter = new FirebaseDogListAdapter(Dog.class,
+                R.layout.dog_list_item_drag, FirebaseDogViewHolder.class,
+                mDogReference, this, this);
+
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mFirebaseAdapter);
+
+        ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(mFirebaseAdapter);
+        mItemTouchHelper = new ItemTouchHelper(callback);
+        mItemTouchHelper.attachToRecyclerView(mRecyclerView);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         mFirebaseAdapter.cleanup();
+    }
+
+    @Override
+    public void onStartDrag(RecyclerView.ViewHolder viewHolder) {
+        mItemTouchHelper.startDrag(viewHolder);
     }
 }

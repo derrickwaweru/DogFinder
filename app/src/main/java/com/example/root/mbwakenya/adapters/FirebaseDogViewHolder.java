@@ -22,10 +22,13 @@ import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
+import static java.lang.System.load;
+
 
 public class FirebaseDogViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     View mView;
     Context mContext;
+    public ImageView mDogImageView;
 
     public FirebaseDogViewHolder(View itemView) {
         super(itemView);
@@ -35,6 +38,7 @@ public class FirebaseDogViewHolder extends RecyclerView.ViewHolder implements Vi
     }
 
     public void bindDog(Dog dog) {
+        mDogImageView = (ImageView) mView.findViewById(R.id.dogImageView);
         ImageView dogImageView = (ImageView) mView.findViewById(R.id.dogImageView);
         TextView nameTextView = (TextView) mView.findViewById(R.id.dogNameTextView);
         TextView categoryTextView = (TextView) mView.findViewById(R.id.categoryTextView);
@@ -42,7 +46,7 @@ public class FirebaseDogViewHolder extends RecyclerView.ViewHolder implements Vi
 
         Picasso.with(mContext)
                 .load(dog.getImageUrl())
-                .into(dogImageView);
+                .into(mDogImageView);
 
         nameTextView.setText(dog.getName());
         categoryTextView.setText(dog.getCategories().get(0));
