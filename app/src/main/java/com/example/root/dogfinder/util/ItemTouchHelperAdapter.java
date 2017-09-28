@@ -1,4 +1,4 @@
-package com.example.root.mbwakenya.util;
+package com.example.root.dogfinder.util;
 
 /**
  * Created by root on 9/26/17.

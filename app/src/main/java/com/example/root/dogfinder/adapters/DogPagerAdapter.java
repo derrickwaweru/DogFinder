@@ -1,11 +1,11 @@
-package com.example.root.mbwakenya.adapters;
+package com.example.root.dogfinder.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.root.mbwakenya.models.Dog;
-import com.example.root.mbwakenya.ui.DogDetailFragment;
+import com.example.root.dogfinder.models.Dog;
+import com.example.root.dogfinder.ui.DogDetailFragment;
 
 import java.util.ArrayList;
 

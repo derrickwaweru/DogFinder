@@ -1,4 +1,4 @@
-package com.example.root.mbwakenya.models;
+package com.example.root.dogfinder.models;
 
 import org.parceler.Parcel;
 

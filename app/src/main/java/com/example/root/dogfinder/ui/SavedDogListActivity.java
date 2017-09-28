@@ -1,4 +1,4 @@
-package com.example.root.mbwakenya.ui;
+package com.example.root.dogfinder.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,15 +6,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
-import com.example.root.mbwakenya.Constants;
-import com.example.root.mbwakenya.R;
-import com.example.root.mbwakenya.adapters.FirebaseDogListAdapter;
-import com.example.root.mbwakenya.adapters.FirebaseDogViewHolder;
-import com.example.root.mbwakenya.models.Dog;
-import com.example.root.mbwakenya.util.OnStartDragListener;
-import com.example.root.mbwakenya.util.SimpleItemTouchHelperCallback;
+import com.example.root.dogfinder.Constants;
+import com.example.root.dogfinder.R;
+import com.example.root.dogfinder.adapters.FirebaseDogListAdapter;
+import com.example.root.dogfinder.adapters.FirebaseDogViewHolder;
+import com.example.root.dogfinder.models.Dog;
+import com.example.root.dogfinder.util.OnStartDragListener;
+import com.example.root.dogfinder.util.SimpleItemTouchHelperCallback;
 //import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 

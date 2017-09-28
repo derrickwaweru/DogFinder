@@ -1,4 +1,4 @@
-package com.example.root.mbwakenya;
+package com.example.root.dogfinder;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

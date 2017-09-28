@@ -1,22 +1,14 @@
-package com.example.root.mbwakenya.ui;
+package com.example.root.dogfinder.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.root.mbwakenya.Constants;
-import com.example.root.mbwakenya.R;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.example.root.dogfinder.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

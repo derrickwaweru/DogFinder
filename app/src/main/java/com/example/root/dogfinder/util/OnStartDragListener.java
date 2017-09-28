@@ -1,4 +1,4 @@
-package com.example.root.mbwakenya.util;
+package com.example.root.dogfinder.util;
 
 import android.support.v7.widget.RecyclerView;
 

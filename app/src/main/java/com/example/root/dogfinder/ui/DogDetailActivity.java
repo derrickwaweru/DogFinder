@@ -1,4 +1,4 @@
-package com.example.root.mbwakenya.ui;
+package com.example.root.dogfinder.ui;
 
 
 
@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.root.mbwakenya.R;
-import com.example.root.mbwakenya.adapters.DogPagerAdapter;
-import com.example.root.mbwakenya.models.Dog;
+import com.example.root.dogfinder.R;
+import com.example.root.dogfinder.adapters.DogPagerAdapter;
+import com.example.root.dogfinder.models.Dog;
 
 import org.parceler.Parcels;
 

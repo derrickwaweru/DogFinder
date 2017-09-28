@@ -1,13 +1,13 @@
-package com.example.root.mbwakenya.adapters;
+package com.example.root.dogfinder.adapters;
 
 import android.content.Context;
 import android.support.v4.view.MotionEventCompat;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.root.mbwakenya.models.Dog;
-import com.example.root.mbwakenya.util.ItemTouchHelperAdapter;
-import com.example.root.mbwakenya.util.OnStartDragListener;
+import com.example.root.dogfinder.models.Dog;
+import com.example.root.dogfinder.util.ItemTouchHelperAdapter;
+import com.example.root.dogfinder.util.OnStartDragListener;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Query;

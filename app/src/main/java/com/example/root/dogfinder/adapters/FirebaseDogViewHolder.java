@@ -1,4 +1,4 @@
-package com.example.root.mbwakenya.adapters;
+package com.example.root.dogfinder.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,10 +7,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.root.mbwakenya.Constants;
-import com.example.root.mbwakenya.R;
-import com.example.root.mbwakenya.models.Dog;
-import com.example.root.mbwakenya.ui.DogDetailActivity;
+import com.example.root.dogfinder.Constants;
+import com.example.root.dogfinder.R;
+import com.example.root.dogfinder.models.Dog;
+import com.example.root.dogfinder.ui.DogDetailActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,8 +21,6 @@ import com.squareup.picasso.Picasso;
 import org.parceler.Parcels;
 
 import java.util.ArrayList;
-
-import static java.lang.System.load;
 
 
 public class FirebaseDogViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

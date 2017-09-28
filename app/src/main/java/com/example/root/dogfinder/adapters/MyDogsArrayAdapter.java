@@ -1,4 +1,4 @@
-package com.example.root.mbwakenya.adapters;
+package com.example.root.dogfinder.adapters;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;

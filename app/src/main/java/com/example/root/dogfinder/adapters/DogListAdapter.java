@@ -1,4 +1,4 @@
-package com.example.root.mbwakenya.adapters;
+package com.example.root.dogfinder.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.root.mbwakenya.R;
-import com.example.root.mbwakenya.models.Dog;
-import com.example.root.mbwakenya.ui.DogDetailActivity;
+import com.example.root.dogfinder.R;
+import com.example.root.dogfinder.models.Dog;
+import com.example.root.dogfinder.ui.DogDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;

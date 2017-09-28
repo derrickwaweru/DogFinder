@@ -1,4 +1,4 @@
-package com.example.root.mbwakenya.ui;
+package com.example.root.dogfinder.ui;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,11 +13,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.example.root.mbwakenya.Constants;
-import com.example.root.mbwakenya.adapters.DogListAdapter;
-import com.example.root.mbwakenya.models.Dog;
-import com.example.root.mbwakenya.R;
-import com.example.root.mbwakenya.services.YelpService;
+import com.example.root.dogfinder.Constants;
+import com.example.root.dogfinder.adapters.DogListAdapter;
+import com.example.root.dogfinder.models.Dog;
+import com.example.root.dogfinder.R;
+import com.example.root.dogfinder.services.YelpService;
 
 import java.io.IOException;
 import java.util.ArrayList;

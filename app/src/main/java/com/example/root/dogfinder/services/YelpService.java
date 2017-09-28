@@ -1,7 +1,7 @@
-package com.example.root.mbwakenya.services;
+package com.example.root.dogfinder.services;
 
-        import com.example.root.mbwakenya.Constants;
-        import com.example.root.mbwakenya.models.Dog;
+        import com.example.root.dogfinder.Constants;
+        import com.example.root.dogfinder.models.Dog;
 
         import org.json.JSONArray;
         import org.json.JSONException;

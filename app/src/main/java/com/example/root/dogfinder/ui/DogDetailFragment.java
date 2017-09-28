@@ -1,4 +1,4 @@
-package com.example.root.mbwakenya.ui;
+package com.example.root.dogfinder.ui;
 
 
 import android.content.Intent;
@@ -12,9 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.root.mbwakenya.Constants;
-import com.example.root.mbwakenya.R;
-import com.example.root.mbwakenya.models.Dog;
+import com.example.root.dogfinder.Constants;
+import com.example.root.dogfinder.R;
+import com.example.root.dogfinder.models.Dog;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
